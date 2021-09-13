@@ -1,0 +1,626 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{ text-decoration: none; 
+    color: #000000;
+}
+
+li{ list-style: none; }
+
+button{ 
+    cursor: pointer; 
+    border: none;
+    background: none;
+    position: relative;
+}
+
+    /* Header */
+header{
+    display: grid;
+    grid-template-columns: 1.6fr 1fr; 
+    overflow: hidden;
+    border: 0.07rem solid #000000;
+    height: 10vh;
+}
+
+header .logo{ width: 16%;
+    display: flex;
+    align-items: center;
+ }
+
+header .logo img{
+    width: 95%;
+    margin-left: 6%;
+    border-radius: 5%;
+}
+
+header .bar-right{}
+
+header .bar-right ul{
+    line-height: 4.1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header .bar-right ul li{
+    align-items: center;
+    font-size: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+header .bar-right ul .buttom-nav::before,
+header .bar-right ul .buttom-nav::after{
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #000000;
+    height: 5%;
+    width: 100%;
+    transition: transform 0.6s;
+}
+
+header .bar-right ul .buttom-nav::before{
+    top: 13%;
+    transform: translateX(100%);
+}
+
+header .bar-right ul .buttom-nav::after{
+    bottom: 15%;
+    transform: translateX(-100%);
+}
+
+header .bar-right ul .buttom-nav:hover::before{ transform: translateX(0); }
+
+header .bar-right ul .buttom-nav:hover::after{ transform: translateX(0); }
+
+header .bar-right ul li a{
+    color: #000;
+}
+
+header .bar-right .responsive-menu{
+    display: none;
+    justify-content: flex-end;
+    z-index: 200;
+}
+
+    /* Slider */
+
+.container{}
+
+.slider{
+    margin-top: 5vh;
+    width: 100%;
+    height: 82vh;
+    overflow: hidden;
+    margin-bottom: 5vh;
+}
+
+.slider ul{
+    display: flex;
+    width: 400%;
+    animation: cambio 16s linear infinite alternate;
+}
+
+.slider ul li{
+    width: 100%;
+}
+
+.slider ul li img{
+    width: 100%;
+}
+
+@keyframes cambio{
+    0%{ margin-left: 0;}
+    20%{ margin-left: 0;}
+
+    25%{ margin-left: -100%;}
+    45%{ margin-left: -100%;}
+
+    50%{ margin-left: -200%;}
+    70%{ margin-left: -200%;}
+
+    75%{ margin-left: -300%;}
+    100%{ margin-left: -300%;}
+}
+
+    /*   ------- imagen triangle  --------  */
+
+.image-triangle{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1.2rem;
+    overflow: hidden;
+}
+
+.image--close{
+    overflow: hidden;
+    align-items: center;
+    position: relative;
+}
+
+.image-triangle .image--close img{
+    width: 100%;
+    height: 35vh;
+    border-radius: 0.2rem;
+}
+
+.text--center{
+    background-color: rgba(38, 174, 242, 0.8);
+    color: #ffffff;
+    display: inline-block;
+    position: absolute;
+    z-index: 10;
+    left: -100%;
+    top: 40%;
+    padding: 0.5rem 0.3rem;
+
+    transition: all 0.6s;
+}
+
+.image--close::before,
+.image--close::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: transform .6s;
+}
+
+.image--close::before{
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+}
+
+.image--close::after{
+    clip-path: polygon(0 0, 0 98.5%, 100% 98.5%);
+    top: 0;
+    transform: translateX(-100%)
+}
+
+.image--close:hover::before{ transform: translateX(10%); }
+
+.image--close:hover::after{ transform: translateX(-10%) }
+
+.image--close:hover .text--center{left: 40%; }
+
+    /*  ----- first Banner ------ */
+
+.banner-one{
+    background: url("../imagenes/open-spaceship.jpg") center no-repeat;
+}
+
+.doing-banner{
+    height: 45vh;
+    margin: 5vh 0;
+    width: 100%;
+}
+
+.doing-banner .content{
+    width: 40%;
+    padding: 2.5rem 3.5rem;
+    color: aliceblue;
+}
+
+.banner-one .content button{ 
+    font-size: 1.2rem; 
+    background: none;
+    padding: 0.65rem 0.6rem;
+    transition: color 0.6s linear;
+    z-index: 100;
+    border: 0.1rem solid #000;
+}
+
+.banner-one .content button:hover{ color: rgb(21, 103, 157); }
+
+.banner-one .content button::before,
+.banner-one .content button::after{
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: #000000;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.5s linear;
+    z-index: -10;
+}
+
+.banner-one .content button::before{ transform: rotateY(90deg); }
+
+.banner-one .content button::after{ transform: rotateX(90deg); }
+
+.banner-one .content button:hover::before,
+.banner-one .content button:hover::after{
+    transform: rotate(0);
+}
+
+.doing-banner .content i{ padding-left: 0.6rem; }
+
+.doing-banner .content h2, 
+.doing-banner .content p{
+    padding-bottom: 2rem;
+}
+
+.doing-banner .content h2, 
+.doing-banner .content p{
+    text-shadow: -1px -1px 1px #000, 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000;
+}
+
+    /*  -------     matris 3 X 2        ---------*/
+
+.matris{}
+
+.matris .content-matris{
+    width: 90%;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 13%;
+    row-gap: 5%;
+}
+
+.matris .content-matris .tile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.matris .content-matris .tile img{
+    width: 50%;
+    margin: auto;
+}
+
+.Flaticon{ text-align: center; }
+
+    /*  ---------- second banner ------  */
+
+.banner-two{
+    background: url("../imagenes/astronautaElonMusk.jpg") center no-repeat;
+    height: 45vh;
+}
+
+.banner-two .content button{ 
+    background-color: none;
+    padding: 0.8rem 0.7rem;
+    transition: color, border 0.6s linear;
+    z-index: 100;
+    color: 	rgb(160, 115, 70);
+    border: 0.1rem solid rgb(160, 115, 70);
+}
+
+.banner-two .content button:hover{ color: rgb(242, 242, 242); }
+
+.banner-two .content button::before,
+.banner-two .content button::after{
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(160, 115, 70);
+    z-index: -10;
+    transition: transform 0.6s;
+}
+
+.banner-two .content button::before{ transform: rotateY(90deg); }
+
+.banner-two .content button::after{ transform: rotateX(90deg); }
+
+.banner-two .content button:hover::before,
+.banner-two .content button:hover::after{
+    transform: rotate(0);
+}
+
+    /*      -------     introduction    ----------*/
+
+.introduction{
+    margin-bottom: 6%;
+}
+
+.introduction .introduction--contain{
+    width: 76%;
+    margin: auto;
+}
+
+.introduction .introduction--contain h2{
+    font-size: 2.7rem;
+    text-align: center;
+}
+
+.introduction .introduction--contain p{
+    font-size: 1.5rem;
+}
+
+hr{
+    border: 0.25rem solid #000000;
+}
+
+    /*      Footer -------------  info-leaders   -----------------*/
+
+.about-leaders{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 95%;
+    margin: auto;
+    padding-top: 7%;
+}
+
+.about-leaders .leader{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 85%;
+    margin: auto;
+}
+
+.about-leaders .leader::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    clip-path: polygon(0 0, 0 55%, 9% 32%, 9% 0);
+}
+
+.about-leaders .leader .info--leader{
+    display: inline-block;
+    width: 75%;
+    margin: auto;
+}
+
+.about-leaders .leader .image--leader{ margin-top: 5%; }
+
+.about-leaders .leader .image--leader img{
+    width: 30%;
+    float: left;
+    border-radius: 50%;
+    margin-right: 3.7%;
+}
+
+.about-leaders .leader .image--leader h3{ margin-top: 2%; }
+
+.about-leaders .leader .image--leader h5{ margin-top: 6%; }
+
+    /*      ----Social Media---     */
+
+.social--media{
+    display: flex;    
+    width: 40%;
+    margin-left: 35%;
+    margin-top: 5%;
+}
+
+.social--media .contain--icon{}
+
+.social--media a{}
+
+.social--media img{ width: 30%; }
+
+.ascribe-autor{
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+    /*      -----------  links  -------------*/
+
+.links--footer{
+    margin-top: 7vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: #707070;
+    padding: 4vh 0;
+    text-align: center;
+}
+
+.links--footer .head-link{}
+
+.links--footer .head-link ul{
+    margin-top: 5vh;
+}
+
+.links--footer .head-link ul li{
+    margin-bottom: 1.5vh;
+    text-align: center;
+}
+
+    /*  -------------  copyright   -------------*/
+
+#copyright{
+    text-align: center;
+    background-color: #4d4d4d;
+}
+
+    /*  -------------------------------------- ussing mediaquery  ---------------------------  */
+
+@media ( max-width: 1053px){
+    .doing-banner .content{ width: 60%; }
+
+    .social--media{
+    margin-top: 9%; 
+    width: 70%;
+    margin-left: 22%;
+    }
+
+    header .logo{ width: 20%;}
+
+    header .logo img{
+        width: 100%;
+        margin-left: 6%;
+    }
+}
+
+@media ( max-width: 770px){
+    .social--media{
+    margin-top: 9%; 
+    width: 80%;
+    margin-left: 18.5%;
+    }
+
+    header .logo{ width: 22%;}
+
+    header .logo img{
+        width: 100%;
+        margin-left: 6%;
+    }
+}
+
+@media ( max-width: 723px){
+    .doing-banner .content{
+    width: 70%;
+    padding: 2.2rem 3.1rem;
+    }
+
+    .slider{
+    margin-top: 3vh;
+    margin-bottom: 2.5vh;
+    height: 79vh;
+    }
+
+    .image-triangle{
+    width: 92%;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.2rem;
+    row-gap: 1.2rem;
+    }
+
+    .links--footer{
+    margin-top: 8vh;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 4vh 0;
+    row-gap: 10%;
+    padding-bottom: 10%;
+    }
+}
+
+@media ( max-width: 705px){
+
+    header .logo{ width: 24%;}
+
+    .matris .content-matris{
+    width: 85%;
+    margin: 1rem auto;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 15%;
+    }
+
+    .Flaticon{ margin-top: 6.5%; }
+
+    .about-leaders{
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 7%;
+    width: 75%;
+    padding-top: 7%;
+    padding-bottom: 10%;
+    }    
+
+    .about-leaders .leader{
+    width: 70%;
+    margin-left: 23%;
+    }
+
+    header .bar-right ul li{ font-size: 1.4rem; }
+}
+
+@media ( max-width: 685px){
+    .slider{
+    margin-bottom: 2vh;
+    height: 76vh;
+    }
+}
+
+@media ( max-width: 650px){
+    .slider{
+    margin-bottom: 1.5vh;
+    height: 72%;
+    }
+
+    .doing-banner .content{ width: 80%; }
+
+    header .logo{ width: 26%;}
+}
+
+@media ( max-width: 608px){
+
+    header .bar-right ul.right-first-half{
+        position: absolute;
+        display: block;
+        background-color: rgba(51, 102, 255, 0.9);
+        left: 0;
+        transform: translateX(-120%);
+        padding: 0.2rem 1.5rem;
+        height: 100%;
+        z-index: 300;
+
+        transition: transform 0.6s;
+    }
+
+    header .bar-right ul.right-first-half .buttom-nav{ margin: 0.5rem 0.4rem; }
+
+    header .bar-right ul.right-first-half.show{ transform: translate(0); }
+
+    header .bar-right .responsive-menu{ display: flex; }
+
+    header .bar-right ul .buttom-nav::before,
+    header .bar-right ul .buttom-nav::after{
+    background-color: #ffffff;
+    }
+    
+    header .bar-right ul .buttom-nav::before{ transform: translateX(110%); }
+
+    header .bar-right ul .buttom-nav::after{ transform: translateX(-110%); }
+
+    header .bar-right .responsive-menu a{
+        font-size: 2rem;
+        margin: 0.7rem 1rem 0 1rem;
+    }
+
+    header .logo{ width: 29%;}
+
+    header .bar-right .responsive-menu a i:hover{ cursor: pointer; }
+
+    header .bar-right ul.right-first-half i{ display: none; }
+
+    header .bar-right ul li a{
+        color: #ffffff;
+        font-size: 1.6rem;
+    }
+
+    
+}
+
+@media ( max-width: 534px){
+
+    header .logo{ width: 33%;}
+
+    .doing-banner .content{
+    width: 97%;
+    padding: 0.7rem 1rem;
+    }
+
+    .links--footer{
+    margin-top: 8vh;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 6%;
+    padding-bottom: 15%;
+    }
+
+    .about-leaders{ padding-bottom: 15%; }    
+}
+
+@media ( max-width: 495px){
+    .Flaticon{ margin-top: 10%; }
+}

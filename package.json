@@ -1,0 +1,23 @@
+{
+  "name": "web-about-space",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sebastian-RP/web-about-space.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sebastian-RP/web-about-space/issues"
+  },
+  "homepage": "https://github.com/Sebastian-RP/web-about-space#readme",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}

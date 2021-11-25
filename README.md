@@ -1,2 +1,1 @@
-# ghpages
 # web-about-space
